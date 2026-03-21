@@ -368,3 +368,187 @@ function initAutocompleteOSM() {
 document.addEventListener('DOMContentLoaded', function () {
     initAutocompleteOSM();
 });
+
+// Chatbot Logic - Active Cleaning and Facility Services
+function getBotResponse(input) {
+    const text = input.toLowerCase();
+
+    // Greetings
+    if (/^(hi|hello|hey|hola|g'day|good morning|good afternoon|good evening|howdy)/.test(text) || text === 'hi' || text === 'hello') {
+        return "G'day! 👋 Welcome to Active Cleaning and Facility Services. I'm your Active Assistant.\n\nHow can I help you today? You can ask me about:\n• Our cleaning services\n• Getting a free quote\n• Our service areas\n• Working with us\n• Contact information";
+    }
+
+    // Services - General
+    if (text.includes('service') || text.includes('clean') || text.includes('que hacen') || text.includes('offer') || text.includes('servicio')) {
+        return "🧹 We provide a full range of professional exterior cleaning services:\n\n🏢 Commercial Soft Washing\n💧 High Pressure Cleaning\n🏠 Roof Cleaning & Restoration\n🪟 Window Cleaning\n⚠️ Anti-Slip Treatments\n🏫 School & Childcare Cleaning\n🏛️ Municipal & Council Cleaning\n🏭 Industrial Facility Cleaning\n\nWould you like details on any specific service? Or call us at 📞 0433 373 942 for a free consultation!";
+    }
+
+    // Pressure washing / high pressure
+    if (text.includes('pressure') || text.includes('presion') || text.includes('wash')) {
+        return "💧 Our High Pressure Cleaning service is perfect for:\n\n• Driveways & pathways\n• Car parks & loading docks\n• Concrete & paved surfaces\n• Industrial floors\n• Building exteriors\n\nWe use commercial-grade equipment for outstanding results. Call 📞 0433 373 942 for a free quote!";
+    }
+
+    // Soft washing
+    if (text.includes('soft')) {
+        return "🏢 Soft Washing is our specialty! It's a low-pressure cleaning method ideal for:\n\n• Painted surfaces\n• Rendered walls\n• Delicate building facades\n• Roofs & gutters\n• Any surface that could be damaged by high pressure\n\nIt's safe, effective, and eco-friendly. Contact us at 📞 0433 373 942!";
+    }
+
+    // Roof cleaning
+    if (text.includes('roof') || text.includes('techo') || text.includes('tejado')) {
+        return "🏠 Our Roof Cleaning & Restoration services include:\n\n• Moss & lichen removal\n• High pressure & soft wash roof cleaning\n• Roof painting & sealing\n• Gutter cleaning\n• Full roof restoration\n\nWe work with tile, metal, and Colorbond roofs across South East Queensland. Call 📞 0433 373 942!";
+    }
+
+    // Window cleaning
+    if (text.includes('window') || text.includes('ventana') || text.includes('glass') || text.includes('vidrio')) {
+        return "🪟 Our Window Cleaning services cover:\n\n• Commercial building windows\n• Shopfront glass\n• High-rise window cleaning\n• Frame & sill cleaning\n• Post-construction glass cleaning\n\nWe ensure streak-free, crystal clear results every time! Call 📞 0433 373 942.";
+    }
+
+    // Anti-slip
+    if (text.includes('slip') || text.includes('anti') || text.includes('antideslizante') || text.includes('safety') || text.includes('seguridad')) {
+        return "⚠️ Our Anti-Slip Treatment services help prevent accidents:\n\n• Floor safety assessments\n• Anti-slip coatings for tiles, concrete & stone\n• Compliant with Australian safety standards\n• Ideal for commercial, industrial & public areas\n• Long-lasting protection\n\nKeep your premises safe! Call 📞 0433 373 942 for an assessment.";
+    }
+
+    // School / childcare cleaning
+    if (text.includes('school') || text.includes('escuela') || text.includes('childcare') || text.includes('education') || text.includes('colegio')) {
+        return "🏫 We specialise in School & Childcare Facility Cleaning:\n\n• Playground equipment cleaning\n• Building exterior washing\n• Pathway & courtyard cleaning\n• Gum & graffiti removal\n• Safe, child-friendly cleaning products\n\nWe understand the importance of maintaining safe, clean environments for children. Call 📞 0433 373 942!";
+    }
+
+    // Municipal / council
+    if (text.includes('municipal') || text.includes('council') || text.includes('government') || text.includes('gobierno')) {
+        return "🏛️ We work with Local Councils & Government bodies providing:\n\n• Public space & footpath cleaning\n• Park & recreation area maintenance\n• Bus shelter & street furniture cleaning\n• Graffiti removal\n• Large-scale municipal projects\n\nWe're experienced in managing large public contracts. Call 📞 0433 373 942!";
+    }
+
+    // Industrial
+    if (text.includes('industrial') || text.includes('factory') || text.includes('warehouse') || text.includes('fabrica') || text.includes('bodega')) {
+        return "🏭 Our Industrial Cleaning services include:\n\n• Factory & warehouse floor cleaning\n• Loading dock & bay cleaning\n• Machinery & equipment exterior cleaning\n• Oil & chemical spill remediation\n• Large facility maintenance programs\n\nWe handle even the toughest industrial cleaning jobs. Call 📞 0433 373 942!";
+    }
+
+    // Contact / phone / email
+    if (text.includes('contact') || text.includes('phone') || text.includes('telefono') || text.includes('contacto') || text.includes('call') || text.includes('email') || text.includes('correo') || text.includes('reach') || text.includes('talk')) {
+        return "📞 Here's how to reach us:\n\n👤 Manager: Matt Lacey\n📱 Phone: 0433 373 942\n✉️ Email: info@activecfs.com.au\n🌐 Website: www.activecfs.com.au\n📍 Location: South East Queensland, Australia\n\nYou can also visit our Contact Us page to send an enquiry directly!";
+    }
+
+    // Location / area / where
+    if (text.includes('location') || text.includes('where') || text.includes('ubicacion') || text.includes('donde') || text.includes('area') || text.includes('brisbane') || text.includes('gold coast') || text.includes('sunshine')) {
+        return "📍 We are based in South East Queensland, Australia.\n\nOur service area covers:\n• Brisbane\n• Gold Coast\n• Sunshine Coast\n• Ipswich\n• Logan\n• Redlands\n• And surrounding regions\n\nNo matter where you are in SEQ, we can help! Call 📞 0433 373 942.";
+    }
+
+    // Price / quote / cost
+    if (text.includes('price') || text.includes('cost') || text.includes('quote') || text.includes('precio') || text.includes('cotizacion') || text.includes('how much') || text.includes('cuanto') || text.includes('estimate') || text.includes('budget') || text.includes('free')) {
+        return "💰 We offer FREE quotes and corporate consultations!\n\nEvery cleaning project is unique, so we provide tailored pricing based on:\n• Type of surface\n• Size of the area\n• Level of cleaning required\n• Frequency of service\n\n✅ No obligation, no hidden fees!\n\nCall 📞 0433 373 942 or visit our Contact Us page to request your free quote today!";
+    }
+
+    // Job / work / employment
+    if (text.includes('job') || text.includes('trabajo') || text.includes('empleo') || text.includes('hire') || text.includes('career') || text.includes('apply') || text.includes('position') || text.includes('vacancy') || text.includes('join')) {
+        return "🤝 Want to join the Active Cleaning team?\n\nWe're always looking for reliable, hardworking people!\n\n• Full Time & Part Time positions available\n• Work across South East Queensland\n• Supportive team environment\n\n👉 Click on \"Work With Us\" in the menu to fill out your application form. We'll review it and contact you soon!";
+    }
+
+    // About / company / who
+    if (text.includes('about') || text.includes('company') || text.includes('who') || text.includes('acerca') || text.includes('empresa') || text.includes('quienes')) {
+        return "🏢 Active Cleaning and Facility Services is a professional exterior cleaning company based in Queensland, Australia.\n\n✅ We specialise in commercial, industrial & municipal cleaning\n✅ Led by Manager Matt Lacey\n✅ 100% Satisfaction Guarantee\n✅ Experienced, professional team\n✅ Eco-friendly cleaning solutions\n\nVisit our About Us page to learn more, or call 📞 0433 373 942!";
+    }
+
+    // Mission / vision
+    if (text.includes('mission') || text.includes('vision') || text.includes('mision') || text.includes('values') || text.includes('valores')) {
+        return "🎯 Our Mission:\nTo deliver exceptional exterior cleaning services that exceed client expectations, using industry-leading techniques and environmentally responsible practices.\n\n🔭 Our Vision:\nTo be Queensland's most trusted and reliable exterior cleaning company, known for quality, integrity, and outstanding customer service.\n\nVisit our Mission & Vision page for more details!";
+    }
+
+    // Why choose us / guarantee
+    if (text.includes('why') || text.includes('choose') || text.includes('guarantee') || text.includes('garantia') || text.includes('advantage') || text.includes('better') || text.includes('best') || text.includes('difference')) {
+        return "⭐ Why Choose Active Cleaning?\n\n✅ 100% Satisfaction Guarantee\n✅ Professional, experienced team\n✅ Commercial-grade equipment\n✅ Eco-friendly cleaning solutions\n✅ Fully insured & compliant\n✅ Free quotes & consultations\n✅ Servicing all of South East Queensland\n✅ Managed by Matt Lacey\n\nWe take pride in every job we do! Call 📞 0433 373 942.";
+    }
+
+    // Website
+    if (text.includes('website') || text.includes('web') || text.includes('sitio') || text.includes('pagina') || text.includes('url') || text.includes('link')) {
+        return "🌐 Visit our official website at:\nwww.activecfs.com.au\n\nThere you can find all the information about our services, request a quote, and get in touch with our team!";
+    }
+
+    // Manager / Matt
+    if (text.includes('manager') || text.includes('matt') || text.includes('lacey') || text.includes('owner') || text.includes('boss') || text.includes('jefe') || text.includes('dueño')) {
+        return "👤 Our company is managed by Matt Lacey.\n\nMatt leads the Active Cleaning team with a commitment to quality, reliability, and customer satisfaction.\n\nYou can reach Matt directly at:\n📱 0433 373 942\n✉️ info@activecfs.com.au";
+    }
+
+    // Hours / availability / schedule
+    if (text.includes('hour') || text.includes('open') || text.includes('available') || text.includes('horario') || text.includes('schedule') || text.includes('time') || text.includes('when')) {
+        return "🕐 We operate Monday to Saturday across South East Queensland.\n\nFor specific availability or to schedule a service, please contact us:\n📱 0433 373 942\n✉️ info@activecfs.com.au\n\nWe're flexible and can work around your schedule!";
+    }
+
+    // Thanks / bye
+    if (text.includes('thank') || text.includes('gracias') || text.includes('bye') || text.includes('adios') || text.includes('cheers') || text.includes('ta')) {
+        return "You're welcome! 😊 Thank you for choosing Active Cleaning and Facility Services.\n\nIf you need anything else, don't hesitate to ask. Have a great day! 🌟\n\n📞 0433 373 942 | ✉️ info@activecfs.com.au";
+    }
+
+    // Help menu
+    if (text.includes('help') || text.includes('ayuda') || text.includes('menu') || text.includes('options') || text.includes('can you')) {
+        return "I can help you with:\n\n🧹 Services - What we offer\n💰 Quotes - Free estimates\n📍 Location - Where we work\n📞 Contact - Phone, email & manager\n🤝 Jobs - Work with us\n🏢 About Us - Our company\n🎯 Mission & Vision\n⭐ Why Choose Us\n\nJust type your question and I'll do my best to help!";
+    }
+
+    // Default response
+    return "Thanks for your message! 😊 I'm the Active Cleaning Assistant.\n\nHere are some things I can help with:\n• Our cleaning services\n• Free quotes & pricing\n• Contact details\n• Service areas in Queensland\n• Job opportunities\n\nOr call us directly at 📞 0433 373 942 — we're happy to help!";
+}
+
+function handleSendMessageGlobal() {
+    const chatbotText = document.getElementById('chatbot-text');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    if (!chatbotText || !chatbotMessages) return;
+
+    const message = chatbotText.value.trim();
+    if (message === '') return;
+
+    // Add user message
+    const userDiv = document.createElement('div');
+    userDiv.className = 'message user';
+    userDiv.textContent = message;
+    chatbotMessages.appendChild(userDiv);
+    chatbotText.value = '';
+
+    // Auto-scroll to bottom
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    // Generate bot response
+    const botResponse = getBotResponse(message);
+
+    // Simulated bot response delay
+    setTimeout(() => {
+        const botDiv = document.createElement('div');
+        botDiv.className = 'message bot';
+        botDiv.innerHTML = botResponse.replace(/\n/g, '<br>');
+
+        chatbotMessages.appendChild(botDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }, 700 + Math.random() * 600);
+}
+
+document.body.addEventListener('click', function (e) {
+    const toggleBtn = e.target.closest('#chatbot-toggle');
+    if (toggleBtn) {
+        const windowEl = document.getElementById('chatbot-window');
+        if (windowEl) {
+            windowEl.classList.add('active');
+            toggleBtn.style.transform = 'scale(0)';
+        }
+    }
+
+    const closeBtn = e.target.closest('#chatbot-close');
+    if (closeBtn) {
+        const windowEl = document.getElementById('chatbot-window');
+        if (windowEl) {
+            windowEl.classList.remove('active');
+            const botToggle = document.getElementById('chatbot-toggle');
+            if (botToggle) {
+                setTimeout(() => { botToggle.style.transform = 'scale(1)'; }, 300);
+            }
+        }
+    }
+
+    const sendBtn = e.target.closest('#chatbot-send');
+    if (sendBtn) {
+        handleSendMessageGlobal();
+    }
+});
+
+document.body.addEventListener('keypress', function (e) {
+    if (e.target && e.target.id === 'chatbot-text' && e.key === 'Enter') {
+        handleSendMessageGlobal();
+    }
+});

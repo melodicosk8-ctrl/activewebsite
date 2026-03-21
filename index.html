@@ -3,8 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Active Cleaning and Facility Services - Professional exterior cleaning solutions in Queensland, Australia.">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Active Cleaning and Facility Services - Professional Cleaning Solutions</title>
+    <!-- Google Fonts preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -27,7 +37,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="logo.png" alt="Active Cleaning Logo">
+                <img src="logo2.png" alt="Active Cleaning Logo">
                 <div class="sparkle sparkle-1"></div>
                 <div class="sparkle sparkle-2"></div>
                 <div class="sparkle sparkle-3"></div>
@@ -42,10 +52,14 @@
 
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#inicio" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="#que-hacemos" class="nav-link">What We Do</a></li>
+                <li class="nav-dropdown"><a href="about.html" class="nav-link">About Us</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="mission-vision.html" class="nav-link">Mission & Vision</a></li>
+                    </ul>
+                </li>
+                <li><a href="what-we-do.html" class="nav-link">What We Do</a></li>
                 <li><a href="#servicios" class="nav-link">Services</a></li>
-                <li><a href="#ventajas" class="nav-link">Why Choose Us</a></li>
+                <li><a href="why-choose-us.html" class="nav-link">Why Choose Us</a></li>
                 <li><a href="#" class="nav-link nav-link-reclutamiento" id="abrir-reclutamiento">Work With Us</a></li>
                 <li><a href="contacto.html" class="nav-link nav-link-btn">Contact Us</a></li>
             </ul>
@@ -60,24 +74,39 @@
             <div class="slide" style="background-image: url('Pat%20rafter%201.jpg');">
             </div>
         </div>
-        <div class="hero-content" style="margin-top: 400px;">
+        <div class="hero-content">
             <a href="contacto.html" class="btn btn-primary">Request Corporate Consultation</a>
         </div>
     </section>
 
-
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/61433373942" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 32 32" class="whatsapp-icon">
-            <path
-                d="M16,2A13,13,0,0,0,8,25.23L2.92,29.3a1,1,0,0,0,1.42,1.41l5.07-4.07A12.94,12.94,0,1,0,16,2Zm0,24a11,11,0,1,1,11-11A11,11,0,0,1,16,26Z"
-                fill="#25D366" />
-            <path
-                d="M21.68,19.06a1.86,1.86,0,0,1-1.31.59h0a1.8,1.8,0,0,1-1.3-.53l-2.63-2.63a1.84,1.84,0,0,1,0-2.61l.72-.72a.37.37,0,0,0,0-.53L15.61,11a.38.38,0,0,0-.53,0l-1.06,1.06a3.56,3.56,0,0,0,0,5l3.77,3.77a3.56,3.56,0,0,0,5,0l1.06-1.06a.38.38,0,0,0,0-.53l-1.57-1.57a.37.37,0,0,0-.53,0Z"
-                fill="white" />
-        </svg>
-    </a>
+    <!-- Floating Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-btn" id="chatbot-toggle" aria-label="Open Chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <h3>Active Assistant</h3>
+                <button id="chatbot-close">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot">Hello! How can I help you with your exterior cleaning needs?</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-text" placeholder="Type a message...">
+                <button id="chatbot-send">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

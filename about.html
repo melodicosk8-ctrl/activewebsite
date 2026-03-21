@@ -3,8 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="About Active Cleaning and Facility Services - Professional exterior cleaning in Queensland, Australia.">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>About Us - Active Cleaning and Facility Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -27,7 +36,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"><img src="logo.png" alt="Active Cleaning Logo"
+                <a href="index.html"><img src="logo2.png" alt="Active Cleaning Logo"
                         style="height: 45px; width: auto; display: block;"></a>
                 <div class="sparkle sparkle-1"></div>
                 <div class="sparkle sparkle-2"></div>
@@ -43,10 +52,14 @@
 
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="index.html#que-hacemos" class="nav-link">What We Do</a></li>
+                <li class="nav-dropdown"><a href="about.html" class="nav-link">About Us</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="mission-vision.html" class="nav-link">Mission & Vision</a></li>
+                    </ul>
+                </li>
+                <li><a href="what-we-do.html" class="nav-link">What We Do</a></li>
                 <li><a href="index.html#servicios" class="nav-link">Services</a></li>
-                <li><a href="index.html#ventajas" class="nav-link">Why Choose Us</a></li>
+                <li><a href="why-choose-us.html" class="nav-link">Why Choose Us</a></li>
                 <li><a href="#" class="nav-link nav-link-reclutamiento" id="abrir-reclutamiento">Work With Us</a></li>
                 <li><a href="contacto.html" class="nav-link nav-link-btn">Contact Us</a></li>
             </ul>
@@ -55,9 +68,9 @@
 
     <!-- About Us Section (Capability Statement Image) -->
     <section id="about"
-        style="padding-top: 150px; padding-bottom: 0px; text-align: center; background-color: var(--white);">
+        style="padding-top: 100px; padding-bottom: 0px; text-align: center; background-color: var(--white);">
         <img src="about-info.png" alt="Active Cleaning Capability Statement"
-            style="width: 100%; height: auto; display: block;">
+            style="width: 100%; max-width: 100%; height: auto; display: block;">
     </section>
 
     <!-- Footer -->
@@ -118,6 +131,34 @@
         </div>
     </div>
 
+    <!-- Floating Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-btn" id="chatbot-toggle" aria-label="Open Chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <h3>Active Assistant</h3>
+                <button id="chatbot-close">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot">Hello! How can I help you with your exterior cleaning needs?</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-text" placeholder="Type a message...">
+                <button id="chatbot-send">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
